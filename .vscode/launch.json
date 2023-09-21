@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'create_files'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=create_files",
+                    "--package=create_files"
+                ],
+                "filter": {
+                    "name": "create_files",
+                    "kind": "bin"
+                }
+            },
+            "args": ["foo.txt","get","name"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'create_files'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=create_files",
+                    "--package=create_files"
+                ],
+                "filter": {
+                    "name": "create_files",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
